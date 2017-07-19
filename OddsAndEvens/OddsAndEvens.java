@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 class OddsAndEvens {
 
@@ -19,6 +19,28 @@ class OddsAndEvens {
       System.out.println(name + " has chosen Evens so the computer will be Odd.");
     }
     System.out.println("------------------------------");
+
+    System.out.print("How many fingers do you put out? ");
+    int userFingers = input.nextInt();
+
+    Random rand = new Random();
+    int compFingers = rand.nextInt(6);
+
+    System.out.println("The computer plays " + compFingers + "!");
+    System.out.println("------------------------------");
+
+    int sum = userFingers + compFingers;
+    String results = "";
+
+    if (sum % 2 == 0) {
+      results = "even";
+    } else {
+      results = "odd";
+    }
+
+    System.out.println(userFingers + " + " + compFingers + " = " + sum);
+    System.out.println(sum + " is an " + results + " number!");
+
   }
 
 }

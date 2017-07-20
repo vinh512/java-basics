@@ -26,10 +26,11 @@ class OddsAndEvens {
     Random rand = new Random();
     int compFingers = rand.nextInt(6);
 
-    System.out.println("The computer plays " + compFingers + "!");
+    System.out.println("The computer puts out " + compFingers + " fingers!");
     System.out.println("------------------------------");
 
     int sum = userFingers + compFingers;
+
     String results = "";
 
     if (sum % 2 == 0) {
@@ -40,6 +41,21 @@ class OddsAndEvens {
 
     System.out.println(userFingers + " + " + compFingers + " = " + sum);
     System.out.println(sum + " is an " + results + " number!");
+    System.out.println("------------------------------");
+
+    if (results == "even") {
+      if (choice.equals("e") || choice.equals("evens")) {
+        System.out.println(name + " won!");
+      } else {
+        System.out.println("The computer won!");
+      }
+    } else {
+      if (choice.equals("o") || choice.equals("odds")) {
+        System.out.println(name + " won!");
+      } else {
+        System.out.println("The computer won!");
+      }
+    }
 
   }
 

@@ -14,9 +14,14 @@ class OddsAndEvens {
     choice = choice.toLowerCase();
 
     if (choice.equals("o") || choice.equals("odds")) {
+      choice = "odds";
       System.out.println(name + " has chosen Odds so the computer will be Evens.");
     } else if (choice.equals("e") || choice.equals("evens")) {
+      choice = "evens";
       System.out.println(name + " has chosen Evens so the computer will be Odd.");
+    } else {
+      System.out.println("Invalid Selection: You have been given Even by default.");
+      choice = "evens";
     }
     System.out.println("------------------------------");
 
@@ -30,31 +35,16 @@ class OddsAndEvens {
     System.out.println("------------------------------");
 
     int sum = userFingers + compFingers;
-
-    String results = "";
-
-    if (sum % 2 == 0) {
-      results = "even";
-    } else {
-      results = "odd";
-    }
+    String results = (sum % 2 == 0) ? "even" : "odd";
 
     System.out.println(userFingers + " + " + compFingers + " = " + sum);
-    System.out.println(sum + " is an " + results + " number!");
+    System.out.println(sum + " is an " + results + " number and you chose " + choice);
     System.out.println("------------------------------");
 
-    if (results == "even") {
-      if (choice.equals("e") || choice.equals("evens")) {
-        System.out.println(name + " won!");
-      } else {
-        System.out.println("The computer won!");
-      }
+    if (results == "even" & choice == "evens") {
+      System.out.println("That means " + name + " won!");
     } else {
-      if (choice.equals("o") || choice.equals("odds")) {
-        System.out.println(name + " won!");
-      } else {
-        System.out.println("The computer won!");
-      }
+      System.out.println("That means the computer won!");
     }
 
   }

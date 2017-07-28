@@ -3,8 +3,10 @@
 public class Crypto {
 
   public static void main(String[] args) {
-
-    System.out.println(normalizeText("This is some \"really\" great. (Text)!?"));
+    String str = "This is some \"really\" great. (Text)!?";
+    str = normalizeText(str);
+    str = obify(str);
+    System.out.println(str);
   }
 
   /* Removes all the spaces from your text
@@ -16,5 +18,25 @@ public class Crypto {
     return str;
   }
 
+  public static String obify(String str) {
+
+    for (int i = 0; i < str.length(); i++) {
+      if (str.charAt(i) == 'E') {
+        str.insert(i, "OB");
+      }
+    }
+    return str;
+  }
+
+  // public static String obify(String str) {
+  //   String[] strArr = str.split("");
+  //   for (int i = 0; i < strArr.length; i++) {
+  //     if (strArr[i].equals("E")) {
+  //       System.out.println("found an e;");
+  //       str.insert(i, "OB");
+  //     }
+  //   }
+  //   return str;
+  // }
 
 }
